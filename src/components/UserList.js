@@ -71,15 +71,19 @@ export default function UserList() {
         Sortuj {isSortedByAgeAscending ? 'malejąco' : 'rosnąco'}
       </button>
       <table>
-        <tr>
-          <th>Imię</th>
-          <th>Nazwisko</th>
-          <th>Wiek</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Wiek</th>
+          </tr>
+        </thead>
 
-        {filteredData?.map((u) => (
-          <User key={u.id} {...u} />
-        ))}
+        <tbody>
+          {filteredData?.map((u) => (
+            <User key={u.id} {...u} />
+          ))}
+        </tbody>
       </table>
     </>
   );
