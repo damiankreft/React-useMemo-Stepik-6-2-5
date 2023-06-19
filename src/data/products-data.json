@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dcdf673d-dfb9-4665-9575-7ab6d5c2c731",
+    "name": "Sencha Benifuki",
+    "category": "tea",
+    "subcategory": "green",
+    "availability": false,
+    "price": 49.5
+  },
+  {
+    "id": "20a7d9fd-7eb8-429b-aada-c935aec5af02",
+    "name": "Sencha Benifuki",
+    "category": "tea",
+    "subcategory": "green",
+    "availability": true,
+    "price": 49.5
+  },
+  {
+    "id": "3f24ad1c-33bd-4a2a-b485-25a3c227e0ec",
+    "name": "Pu-Erh Shu",
+    "category": "tea",
+    "subcategory": "pu-erh",
+    "availability": true,
+    "price": 92
+  },
+  {
+    "id": "c2d1a5ff-5e25-4e22-88fd-99b7b7a229ca",
+    "name": "Yunnan Golden Silk",
+    "category": "tea",
+    "subcategory": "black",
+    "availability": true,
+    "price": 33.9
+  },
+  {
+    "id": "69baeca4-271f-4af3-b7a7-ed207db2662f",
+    "name": "Sencha Kagoshima",
+    "category": "tea",
+    "subcategory": "green",
+    "availability": false,
+    "price": 49
+  },
+  {
+    "id": "d728c196-1f75-4062-8c24-bed14c429cbd",
+    "name": "Sencha Uchiyama",
+    "category": "tea",
+    "subcategory": "green",
+    "availability": true,
+    "price": 29.5
+  }
+]

@@ -1,0 +1,62 @@
+import React, { useState, useMemo } from 'react';
+import usersData from '../data/users-data';
+import User from './User';
+
+export default function UserList() {
+  const [firstnameVal, setFirstname] = useState('');
+  const [lastnameVal, setLastname] = useState('');
+  const [isSortedByAgeAscending, setSortByAge] = useState(false);
+
+  const users = useMemo(() => {
+    const data = usersData
+      .filter((x) => x.firstname?.toLowerCase().includes(firstnameVal))
+      .filter((x) => x.lastnameProps?.toLowerCase().includes(lastnameVal));
+    return isSortedByAgeAscending
+      ? data.sort((a, b) => (a.age > b.age ? 1 : -1))
+      : data.sort((a, b) => (a.age > b.age ? -1 : 1));
+  }, [isSortedByAgeAscending]);
+
+  const onFirstnameChanged = (e) => {
+    e.preventDefault();
+    setFirstname(e.target.value.toLowerCase());
+  };
+
+  const onLastnameChanged = (e) => {
+    e.preventDefault();
+    setLastname(e.target.value.toLowerCase());
+  };
+
+  return (
+    <>
+      <h1>Lista użytkowników</h1>
+      <input
+        onChange={(e) => onFirstnameChanged(e)}
+        type="text"
+        placeholder="imię"
+      />
+      <input
+        onChange={(e) => onLastnameChanged(e)}
+        type="text"
+        placeholder="nazwisko"
+      />
+      <button
+        onClick={() => {
+          setSortByAge(!isSortedByAgeAscending);
+        }}
+      >
+        Sortuj {isSortedByAgeAscending ? 'malejąco' : 'rosnąco'}
+      </button>
+      <table>
+        <tr>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>Wiek</th>
+        </tr>
+
+        {users.map((u) => (
+          <User key={u.id} {...u} />
+        ))}
+      </table>
+    </>
+  );
+}
